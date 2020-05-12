@@ -1,5 +1,7 @@
 
 def hasSumOfPair(numbers, k):
+  """Given a list of numbers and a number k,
+  return whether any two numbers from the list add up to k."""
   numbers.sort()
   i = 0
   j = len(numbers) - 1
