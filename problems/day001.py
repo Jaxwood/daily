@@ -10,9 +10,7 @@ def hasSumOfPair(numbers, k):
       return False
     if (numbers[i] + numbers[j] == k):
       return True
-    if (numbers[i] + numbers[j] > k):
+    elif (numbers[i] + numbers[j] > k):
       j-= 1
-      continue
-    if (numbers[i] + numbers[j] < k):
+    elif (numbers[i] + numbers[j] < k):
       i+= 1
-      continue
