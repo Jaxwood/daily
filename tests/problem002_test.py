@@ -1,6 +1,7 @@
 import unittest
 from problems.problem002 import products, products2
 
+
 class TestProblem002(unittest.TestCase):
 
     def test_products_example1_returnCorrectValues(self):
