@@ -4,4 +4,15 @@ def distinct_sequence(k: int, s: str) -> int:
   = "abcba" and k = 2, the longest substring with k distinct characters is
   "bcb".
   """
-  return 0
+  best = 0
+  for i in range(len(s)):
+    candidate = s[i]
+    for j in range(i+1, len(s)):
+      if len(candidate) < 2:
+        candidate += s[j]
+      elif s[j] in set(candidate):
+          candidate += s[j]
+      else:
+        break
+    best = max(len(candidate), best)
+  return best
