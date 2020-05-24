@@ -8,7 +8,7 @@ def distinct_sequence(k: int, s: str) -> int:
   for i in range(len(s)):
     candidate = s[i]
     for j in range(i+1, len(s)):
-      if len(candidate) < 2:
+      if len(candidate) < k:
         candidate += s[j]
       elif s[j] in set(candidate):
           candidate += s[j]
