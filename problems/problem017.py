@@ -30,6 +30,9 @@ def is_file(s: str) -> bool:
 
 
 def longest_path(n: Node) -> int:
+    """Given a string representing the file system,
+    return the length of the longest absolute path to a file in the
+    abstracted file system. If there is no file in the system, return 0."""
     s = n.len()
     queue = []
     best = 0
