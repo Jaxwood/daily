@@ -3,31 +3,28 @@ class Node:
     element from the list. k is guaranteed to be smaller than the length of
     the list."""
 
-    def __init__(self, val: int, n = None):
+    def __init__(self, val, next=None):
         self.val = val
-        self.next = n
+        self.next = next
 
-    def remove(self, k: int):
-        l = self.length()
-        n = self
-        cnt = 1
-        until = l - k - 1
-        if until == 0:
-            return self.next
-        while until != cnt:
-            cnt += 1
-            n = n.next
+    def __str__(self):
+        current_node = self
+        result = []
+        while current_node:
+            result.append(current_node.val)
+            current_node = current_node.next
+        return str(result)
 
-        if k == 0:
-            n.next = None
-        else:
-            n.next = n.next.next
-        return self
 
-    def length(self):
-        l = 1
-        n = self.next
-        while n:
-            l += 1
-            n = n.next
-        return l
+def remove(head, k):
+    slow, fast = head, head
+    for _ in range(k):
+        fast = fast.next
+
+    prev = None
+    while fast:
+        prev = slow
+        slow = slow.next
+        fast = fast.next
+
+    prev.next = slow.next
