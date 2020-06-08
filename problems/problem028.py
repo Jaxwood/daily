@@ -24,12 +24,13 @@ def justify(s: [str], k: int) -> [str]:
         while whitespaces > 0:
             line[idx] = line[idx] + ' '
             whitespaces -= 1
+            # do not add whitespace to end of the line
             if idx + 1 >= len(line) - 1:
                 idx = 0
             else:
                 idx += 1
 
-    # merge lines
+    # merge words in each line
     result = []
     for line in lines:
         result.append(''.join(line))
