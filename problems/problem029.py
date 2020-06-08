@@ -16,6 +16,7 @@ def encode(s: str) -> str:
 
     return result
 
+
 def decode(s: str) -> str:
     cnt = 0
     result = ''
