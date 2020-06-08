@@ -1,4 +1,3 @@
-import math
 def justify(s: [str], k: int) -> [str]:
     """Write an algorithm to justify text. Given a sequence of words and an
     integer line length k, return a list of strings which represents each
