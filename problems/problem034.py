@@ -5,13 +5,19 @@ def palindrome(s: str) -> str:
     lexicographically earliest one (the first one alphabetically)."""
     result = s
     prefix = ""
+    postfix = ""
     e = len(s) - 1
-    while not is_palindrome(prefix + result):
+    b = 0
+    while not is_palindrome(result + postfix) and not is_palindrome(prefix + result):
         prefix += s[e]
+        postfix = s[b] + postfix
         e -= 1
-    result = prefix + result
-
-    return result
+        b += 1
+    
+    if is_palindrome(prefix + result):
+        return prefix + result
+    else:
+        return result + postfix
 
 def is_palindrome(s: str) -> bool:
     i = 0

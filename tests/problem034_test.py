@@ -14,6 +14,6 @@ class TestProblem034(unittest.TestCase):
         self.assertEqual(actual, expected)
 
     def test_palindrome_google(self):
-        expected = "elgoogle"
-        actual = palindrome("google")
+        expected = "legoogel"
+        actual = palindrome("legoog")
         self.assertEqual(actual, expected)
