@@ -4,14 +4,12 @@ def palindrome(s: str) -> str:
     more than one palindrome of minimum length that can be made, return the
     lexicographically earliest one (the first one alphabetically)."""
     result = s
-    if len(set(s)) == len(s):
-        e = len(s) - 1
-        prefix = ""
-        while not is_palindrome(prefix + result):
-            prefix += s[e]
-            print(prefix+result)
-            e -= 1
-        result = prefix + result
+    prefix = ""
+    e = len(s) - 1
+    while not is_palindrome(prefix + result):
+        prefix += s[e]
+        e -= 1
+    result = prefix + result
 
     return result
 

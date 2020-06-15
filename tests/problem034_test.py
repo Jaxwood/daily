@@ -8,7 +8,12 @@ class TestProblem034(unittest.TestCase):
         expected = "ecarace"
         self.assertEqual(True, is_palindrome(expected))
 
-    def test_palindrome(self):
+    def test_palindrome_race(self):
         expected = "ecarace"
         actual = palindrome("race")
+        self.assertEqual(actual, expected)
+
+    def test_palindrome_google(self):
+        expected = "elgoogle"
+        actual = palindrome("google")
         self.assertEqual(actual, expected)
